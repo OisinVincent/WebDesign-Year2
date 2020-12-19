@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <div id="weather"></div>
+   
+  </head>
+  <body>
+     
+<script>
+fetch("https://dog.ceo/api/breeds/image/random")
+        .then(function(response) {
+            return response.json();
+      
+        })
+        .then(function(json) {
+            document.write("<img src='" + json.message + "'>")
+            
+              
+                
+        });
+       
+    
+    
+    
+    
+      </script></body></html>

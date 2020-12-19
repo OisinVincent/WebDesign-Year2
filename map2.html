@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+  <head>
+      <meta name="viewport" content="initial-scale=1.0,
+            width=device-width" />
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+  </head>
+  <body>
+      <button id="btn" onclick="map()">Map</button>
+    <div id="mapContainer"></div>
+   <script type="text/javascript" charset="utf-8">
+    //Initialize the Platform object:
+       function map(){
+    var platform = new H.service.Platform({
+        'apikey': 'eSP2Vhjxkwr_9Jkwahr7GAXCMW0bNMmbeXuuuAya5Q0'
+    });
+
+    // Get the default map types from the Platform object:
+    var defaultLayers = platform.createDefaultLayers();
+
+    // Instantiate the map:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.vector.normal.map,
+        {
+            zoom: 10,
+            center: { lat: 54.2766, lng: -8.4761 }
+        });
+
+    // Create the default UI:
+    var ui = H.ui.UI.createDefault(map, defaultLayers);
+       ui.getControl('zoom').setDisabled(false);
+       
+       var mapSettings = ui.getControl('mapsettings');
+var zoom = ui.getControl('zoom');
+var scalebar = ui.getControl('scalebar');
+
+mapSettings.setAlignment('top-left');
+zoom.setAlignment('top-left');
+scalebar.setAlignment('top-left');
+           mapContainer.style.height="700px"
+                      mapContainer.style.width="700px"
+
+       }
+</script>
+
+  </body>
+</html>
